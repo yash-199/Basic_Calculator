@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<Style>
+    .container{
+        width:100%;
+        height:97vh;
+        border-radius:10px;
+        background-image: url(image/Screenshot\ 2023-11-11\ 183301.png);
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 600;
+    }
+
+    /* .cal-input{
+       
+        border-radius:10px;
+    } */
+    
+    .display-input{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #display{
+        box-shadow: 0px 4.8px 14.4px rgba(131, 126, 255, 0.3);
+        width:60vh;
+        height:10vh;
+        border-radius:10px;
+        border:1px solid #fff;
+        color:black;
+        font-size:30px;
+        font-weight: 600;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .cal-btn{
+        width:30%;
+        position: absolute;
+        left:72vh;
+        margin-top:20px;
+    }
+
+   button{
+        font-size: 22px;
+        height: 50px;
+        width: 100px;
+        justify-content: space-around;
+        background: linear-gradient(280.75deg, #0078D4 0%, #9692FF 94.81%);
+        color:white;
+        border:none ;
+        border-radius: 10px;
+        margin:4px 4px;
+   }
+
+   @media screen and (max-width: 600px) {
+    #display{
+        width:40vh;
+    }
+    .cal-btn{
+        left:8vh;
+        width:80%;
+    }
+
+    button{
+        font-size:16px;
+        width:80px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+ .cal-btn{
+    left:10vh;
+    width:82%;
+ }
+ #equal{
+    width:34%;
+ }
+}
+
+</Style>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="display-input">
+            <input type="text"  id="display" readonly>
+        </div>
+        <div class="cal-btn">
+            <button onclick="currentValue=currentValue+'%';
+                    document.querySelector('#display').value=currentValue;">%
+            </button>
+
+            <button onclick="currentValue ='';
+            document.querySelector('#display').value = currentValue
+            ">CE</button>
+
+            <button onclick="currentValue = ' ';
+            document.querySelector('#display').value = currentValue">C
+            </button>
+
+            <button><</button>
+            
+            <button onclick="currentValue=currentValue+'7';
+            document.querySelector('#display').value=currentValue">7
+            </button>            
+            
+            <button onclick="currentValue = currentValue + '8';
+            document.querySelector('#display').value = currentValue">8
+            </button>
+            
+            <button onclick="currentValue = currentValue + '9';
+            document.querySelector('#display').value=currentValue">9
+            </button>
+            
+            <button onclick="currentValue=currentValue+'/';
+            document.querySelector('#display').value = currentValue">%
+            </button>
+            
+            <button onclick="currentValue=currentValue+'4';
+            document.querySelector('#display').value = currentValue">4
+            </button>
+            
+            <button onclick="currentValue=currentValue+'5';
+            document.querySelector('#display').value = currentValue">5
+            </button>
+            
+            <button onclick="currentValue=currentValue+'6';
+            document.querySelector('#display').value = currentValue">6
+            </button>
+            <button onclick="currentValue=currentValue+'-';
+            document.querySelector('#display').value = currentValue">-
+            </button>
+            <button onclick="currentValue=currentValue+'1';
+            document.querySelector('#display').value=currentValue">1
+            </button>
+            
+            <button onclick="currentValue=currentValue+'2';
+            document.querySelector('#display').value = currentValue">2
+            </button>
+            
+            <button onclick="currentValue=currentValue+'3';
+            document.querySelector('#display').value=currentValue">3
+            </button>
+            <button onclick="currentValue=currentValue+'+';
+            document.querySelector('#display').value=currentValue">+
+            </button>
+            
+            <button onclick="currentValue=currentValue+'.';
+            document.querySelector('#display').value=currentValue">.
+            </button>
+            
+            <button onclick="currentValue=currentValue+'0';
+            document.querySelector('#display').value=currentValue">0
+            </button>
+            
+            <button id="equal"
+            onclick="
+            let result=eval(currentValue);
+            document.querySelector('#display').value=result">=</button>
+        </div>
+    </div>
+</body>
+<script>
+    let currentValue = "";
+    document.querySelector('#display').value=currentValue;
+</script>
+</html>
